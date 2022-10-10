@@ -14,9 +14,9 @@ public class Main {
                 {'1','2','3','4','5',},
                 {'.'}
         };
-        int CountRows1= array1.length;
-        int CountRows2= array2.length;
-        int CountRowsResult=Math.max(CountRows1, CountRows2);
+        final int CountRows1= array1.length;
+        final int CountRows2= array2.length;
+        final int CountRowsResult=Math.max(CountRows1, CountRows2);
         int MaxCountColumns1;
         if(CountRows1==0){
             MaxCountColumns1=0;
@@ -38,7 +38,7 @@ public class Main {
         for(int i=1;i<CountRows2;i++){
             MaxCountColumns2=Math.max(MaxCountColumns2, array2[i].length);
         }
-        int CountColumnsResult=Math.max(MaxCountColumns1, MaxCountColumns2);
+        final int CountColumnsResult=Math.max(MaxCountColumns1, MaxCountColumns2);
 
         char[][] result=new char[CountRowsResult][CountColumnsResult];
         char currentResult1;
