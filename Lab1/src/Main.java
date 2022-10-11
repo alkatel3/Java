@@ -6,7 +6,7 @@ public class Main {
         final int m = 4;
         final int C = 0;
 
-        if ((a <= C && C <= n)||(b <= C && C <= m)) {
+        if ((a <= C && C <= n)||(b <= 0 && 0 <= m)) {
             System.out.println("Error! Division by 0!");
             return;
         }
@@ -21,6 +21,6 @@ public class Main {
                 sum += numerator / denominator;
             }
         }
-        System.out.println(sum);
+        System.out.println("S = " +sum);
     }
 }
