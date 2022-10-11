@@ -4,9 +4,9 @@ public class Main {
         final float b = 1;
         final int n = 9;
         final int m = 4;
-        final int C3 = 0;
+        final int C = 0;
 
-        if ((a <= C3 && n >= C3)||(b<=C3&&m>=C3)) {
+        if ((a <= C && C <= n)||(b <= C && C <= m)) {
             System.out.println("Error! Division by 0!");
             return;
         }

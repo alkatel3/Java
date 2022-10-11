@@ -17,28 +17,28 @@ public class Main {
         final int CountRows1= array1.length;
         final int CountRows2= array2.length;
         final int CountRowsResult=Math.max(CountRows1, CountRows2);
-        int MaxCountColumns1;
+        int CountColumns1;
         if(CountRows1==0){
-            MaxCountColumns1=0;
+            CountColumns1=0;
         }
         else {
-            MaxCountColumns1 = array1[0].length;
+            CountColumns1 = array1[0].length;
         }
         for(int i=1;i<CountRows1;i++){
-            MaxCountColumns1=Math.max(MaxCountColumns1, array1[i].length);
+            CountColumns1=Math.max(CountColumns1, array1[i].length);
         }
-        int MaxCountColumns2;
+        int CountColumns2;
         if(CountRows2==0){
-            MaxCountColumns2=0;
+            CountColumns2=0;
         }
         else{
-            MaxCountColumns2=array2[0].length;
+            CountColumns2=array2[0].length;
         }
 
         for(int i=1;i<CountRows2;i++){
-            MaxCountColumns2=Math.max(MaxCountColumns2, array2[i].length);
+            CountColumns2=Math.max(CountColumns2, array2[i].length);
         }
-        final int CountColumnsResult=Math.max(MaxCountColumns1, MaxCountColumns2);
+        final int CountColumnsResult=Math.max(CountColumns1, CountColumns2);
 
         char[][] result=new char[CountRowsResult][CountColumnsResult];
         char currentResult1;
@@ -63,11 +63,11 @@ public class Main {
         System.out.println();
         char sumRow;
         for(int i=0; i<CountRowsResult;i++) {
-            sumRow=0;
+            sumRow = 0;
             for (int j = 0; j < result[i].length; j++) {
-                sumRow+=result[i][j];
+                sumRow += result[i][j];
             }
-            System.out.printf("The average of the %d row: '%c'\n",i+1,(char)(sumRow/CountColumnsResult));
+            System.out.printf("The average of the %d row: '%c'\n", i + 1, (char) (sumRow / CountColumnsResult));
         }
     }
 }
