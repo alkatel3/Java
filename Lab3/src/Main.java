@@ -8,8 +8,8 @@ public class Main {
         //Текс із заданним типом StringBuilder
         StringBuilder text = new StringBuilder("Ok! " +
                 "Hello, my name is Vitaliy. " +
-                "I from Lviv. " +
-                "I'm student." +
+                "I'm from Lviv. " +
+                "I'm student. " +
                 "I love sport and music! " +
                 "Do you love sport or music?");
 
@@ -17,7 +17,7 @@ public class Main {
         System.out.println(text);
         System.out.println();
 
-        replase(text);
+        text=replase(text);
         System.out.println("Result text");
         System.out.println(text);
         System.out.println();
@@ -54,7 +54,10 @@ public class Main {
                 sentence = sentence.replace(0, first_word_index, new String(last_word));
 
                 text.replace(temp_index, i, new String(sentence));
+
                 temp_index = i + 2;
+
+
             }
         }
         text.deleteCharAt(text.length()-1);
