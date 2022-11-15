@@ -11,15 +11,17 @@ public class Text {
 
     public void Replase(){
         for (Sentence sentence:sentences){
-            var item=sentence.GetFirstWord();
-            sentence.SetFirstWord(sentence.GetLastWord());
+            var item=sentence.GetFirstWord().toString();
+            sentence.SetFirstWord(sentence.GetLastWord().toString());
             sentence.SetLastWord(item);
         }
     }
 
-    public void Show(){
+    public String toString() {
+        String result="";
         for (Sentence sentence:sentences) {
-            sentence.Show();
+            result+=sentence;
         }
+        return  result;
     }
 }

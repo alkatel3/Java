@@ -8,8 +8,8 @@ public class Main {
         //Текс із заданним типом StringBuilder
         StringBuilder text = new StringBuilder("Ok! " +
                 "Hello, my name is Vitaliy. " +
-                "I'm from Lviv. " +
-                "I'm student. " +
+                "I am from Lviv. " +
+                "I am student. " +
                 "I love sport and music! " +
                 "Do you love sport or music?");
 
@@ -40,7 +40,9 @@ public class Main {
                 }
 
                 int first_word_index = sentence.indexOf(" ");
-                if (sentence.charAt(first_word_index - 1) == ',' || sentence.charAt(first_word_index - 1) == ':') {
+                if (sentence.charAt(first_word_index - 1) == ',' ||
+                        sentence.charAt(first_word_index - 1) == ':'||
+                        sentence.charAt(first_word_index - 1) == ';') {
                     first_word_index -= 1;
                 }
 
@@ -56,8 +58,6 @@ public class Main {
                 text.replace(temp_index, i, new String(sentence));
 
                 temp_index = i + 2;
-
-
             }
         }
         text.deleteCharAt(text.length()-1);

@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 public class Sentence {
     private SentencePart[] sentenceParts;
     public Sentence(String sentenceString) {
-        final String[] sentencePartsStrings = sentenceString.split(" +|(?=,|\\p{Punct}|…)"); //TODO I'm and +-and other
+        final String[] sentencePartsStrings = sentenceString.split(" +|(?=,|\\p{Punct}|…)");
         sentenceParts = new SentencePart[sentencePartsStrings.length];
         for (int i = 0; i < sentenceParts.length; i++) {
             if (Pattern.matches("\\p{Punct}", sentencePartsStrings[i].substring(0, 1))) {
@@ -33,32 +33,36 @@ public class Sentence {
         return new Word("");
     }
 
-    public void SetFirstWord(Word word){
+    public void SetFirstWord(String word){
+        Word w=new Word(word);
         for(int i=0;i<sentenceParts.length;i--) {
             if(sentenceParts[i].GetIndex()==1){
-                sentenceParts[i]=word;
+                sentenceParts[i]=w;
                 break;
             }
-
         }
     }
-    public void SetLastWord(Word word){
+    public void SetLastWord(String word){
+        Word w=new Word(word);
         for(int i=sentenceParts.length-1;i>=0;i--) {
-            if(sentenceParts[i].GetIndex()==0){
-                sentenceParts[i]=word;
+            if(sentenceParts[i].GetIndex()==1){
+                sentenceParts[i]=w;
                 break;
             }
         }
     }
 
-    public void Show(){
+    @Override
+    public String toString() {
+        String result="";
         for(int i=0; i<sentenceParts.length;i++){
-            sentenceParts[i].Show();
+            result+=sentenceParts[i];
             if((i<(sentenceParts.length-1)&&sentenceParts[i].GetIndex()==0&&sentenceParts[i+1].GetIndex()==0)||
                     (i<(sentenceParts.length-1)&&sentenceParts[i].GetIndex()==1&&sentenceParts[i+1].GetIndex()==0)){
                 continue;
             }
-            System.out.print(' ');
+            result+=' ';
         }
+        return  result;
     }
 }

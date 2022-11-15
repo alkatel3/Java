@@ -10,25 +10,16 @@ public class Word implements SentencePart {
         }
     }
 
-    public  void Show(){
+    @Override
+    public String toString() {
+        String result="";
         for (Letter letter:letters) {
-            letter.Show();
+           result+=letter;
         }
+        return  result;
     }
+
     public int GetIndex(){
         return 1;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Word word = (Word) o;
-        return Arrays.equals(letters, word.letters);
-    }
-
-    @Override
-    public int hashCode() {
-        return Arrays.hashCode(letters);
     }
 }
