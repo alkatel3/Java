@@ -17,7 +17,7 @@ public class Main {
         System.out.println(text);
         System.out.println();
 
-        text=replase(text);
+        text = replase(text);
         System.out.println("Result text");
         System.out.println(text);
         System.out.println();
@@ -41,26 +41,26 @@ public class Main {
 
                 int first_word_index = sentence.indexOf(" ");
                 if (sentence.charAt(first_word_index - 1) == ',' ||
-                        sentence.charAt(first_word_index - 1) == ':'||
+                        sentence.charAt(first_word_index - 1) == ':' ||
                         sentence.charAt(first_word_index - 1) == ';') {
                     first_word_index -= 1;
                 }
 
                 int last_word_index = sentence.lastIndexOf(" ") + 1;
-                int sequence_length = sentence.length();
+                int sentence_length = sentence.length();
 
-                StringBuilder last_word = new StringBuilder(sentence.substring(last_word_index, sequence_length));
+                StringBuilder last_word = new StringBuilder(sentence.substring(last_word_index, sentence_length));
                 StringBuilder first_word = new StringBuilder(sentence.substring(0, first_word_index));
 
-                sentence = sentence.replace(last_word_index, sequence_length, new String(first_word));
-                sentence = sentence.replace(0, first_word_index, new String(last_word));
+                sentence = sentence.replace(last_word_index, sentence_length, first_word.toString());
+                sentence = sentence.replace(0, first_word_index, last_word.toString());
 
-                text.replace(temp_index, i, new String(sentence));
+                text.replace(temp_index, i, sentence.toString());
 
                 temp_index = i + 2;
             }
         }
-        text.deleteCharAt(text.length()-1);
+        text.deleteCharAt(text.length() - 1);
         return text;
     }
 }

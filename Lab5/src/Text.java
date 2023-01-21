@@ -9,19 +9,19 @@ public class Text {
         }
     }
 
-    public void Replase(){
-        for (Sentence sentence:sentences){
-            var item=sentence.GetFirstWord().toString();
+    public void replace() {
+        for (Sentence sentence : sentences) {
+            var item = sentence.GetFirstWord().toString();
             sentence.SetFirstWord(sentence.GetLastWord().toString());
             sentence.SetLastWord(item);
         }
     }
 
     public String toString() {
-        String result="";
-        for (Sentence sentence:sentences) {
-            result+=sentence;
+        String result = "";
+        for (Sentence sentence : sentences) {
+            result += sentence;
         }
-        return  result;
+        return result;
     }
 }

@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         String InputText = new String("Ok! " +
@@ -12,7 +10,7 @@ public class Main {
         Text text = new Text(InputText);
         System.out.println(text);
         System.out.println();
-        text.Replase();
+        text.replace();
         System.out.println(text);
 
 

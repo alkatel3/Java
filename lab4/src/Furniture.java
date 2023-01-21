@@ -8,12 +8,12 @@ public class Furniture {
     private String country;
     private String material;
 
-    public Furniture(String type, String color,double price,String country, String material){
-        this.type=type;
-        this.color=color;
-        this.price=price;
-        this.country=country;
-        this.material=material;
+    public Furniture(String type, String color, double price, String country, String material) {
+        this.type = type;
+        this.color = color;
+        this.price = price;
+        this.country = country;
+        this.material = material;
     }
 
     @Override
@@ -23,14 +23,15 @@ public class Furniture {
                 ";\tcolor: " + color +
                 ";\tcountry: " + country +
                 ";\tmaterial: " + material +
-                ";\tprice: " + price +"$" +
+                ";\tprice: " + price + "$" +
                 "}";
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return price;
     }
-    public String getType(){
+
+    public String getType() {
         return type;
     }
 }
